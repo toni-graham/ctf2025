@@ -18,6 +18,11 @@
     font-size: 30px;
     color: white;
     cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger:hover {
+    transform: scale(1.1);
   }
 
   .side-menu {
@@ -28,19 +33,34 @@
     left: 0;
     background-color: #333;
     overflow-x: hidden;
-    transition: 0.3s;
+    transition: width 0.4s ease;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
     z-index: 1000;
+    opacity: 0;
+  }
+
+  .side-menu.open {
+    width: 250px;
+    opacity: 1;
+    transition: width 0.4s ease, opacity 0.3s ease;
   }
 
   .side-menu a {
-    padding: 10px 20px;
+    padding: 12px 20px;
     text-decoration: none;
     font-size: 18px;
     color: white;
     display: block;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .side-menu.open a {
+    transform: translateX(0);
+    opacity: 1;
   }
 
   .side-menu a:hover {
@@ -63,10 +83,10 @@
   const closeBtn = document.getElementById('closebtn');
 
   hamburger.addEventListener('click', () => {
-    sideMenu.style.width = "250px";
+    sideMenu.classList.add('open');
   });
 
   closeBtn.addEventListener('click', () => {
-    sideMenu.style.width = "0";
+    sideMenu.classList.remove('open');
   });
 </script>
