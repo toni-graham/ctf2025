@@ -132,3 +132,19 @@ body::before {
   margin-top: 15px;
   font-weight: bold;
 }
+
+/* Shake animation for wrong answers */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+  border-color: #ff0066;
+  box-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066;
+}
