@@ -10,22 +10,26 @@
 </nav>
 
 <style>
+  /* Header / Navbar */
   .navbar {
-    background-color: #333;
-    padding: 10px 20px;
+    background: linear-gradient(90deg, #000428, #004e92);
+    padding: 12px 20px;
     position: relative;
     z-index: 1100;
+    box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
   }
 
   .hamburger {
-    font-size: 30px;
-    color: white;
+    font-size: 32px;
+    color: #00fff7;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    text-shadow: 0 0 8px #00fff7;
+    transition: transform 0.3s ease, color 0.3s ease;
   }
 
   .hamburger:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    color: #0ff;
   }
 
   /* Side menu */
@@ -35,7 +39,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #333;
+    background: rgba(0, 10, 30, 0.95);
+    border-right: 2px solid #00fff7;
     overflow-x: hidden;
     transition: width 0.4s ease;
     padding-top: 60px;
@@ -43,23 +48,25 @@
     flex-direction: column;
     z-index: 1200;
     opacity: 0;
+    box-shadow: 0 0 15px #00fff7;
   }
 
   .side-menu.open {
-    width: 250px;
+    width: 270px;
     opacity: 1;
     transition: width 0.4s ease, opacity 0.3s ease;
   }
 
   .side-menu a {
-    padding: 12px 20px;
+    padding: 14px 24px;
     text-decoration: none;
-    font-size: 18px;
-    color: white;
+    font-size: 20px;
+    color: #00fff7;
     display: block;
     transform: translateX(-20px);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+    text-shadow: 0 0 8px #00fff7;
   }
 
   .side-menu.open a {
@@ -68,16 +75,22 @@
   }
 
   .side-menu a:hover {
-    background-color: #575757;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
   }
 
   .closebtn {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 36px;
-    color: white;
+    font-size: 40px;
+    color: #00fff7;
     text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .closebtn:hover {
+    transform: rotate(90deg);
   }
 
   /* Overlay */
@@ -88,7 +101,8 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
     z-index: 1150;
     transition: opacity 0.3s ease;
     opacity: 0;
