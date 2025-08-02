@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Challenge 1
-permalink: /Chip-Or-Treat!/
+title: Chip-Or-Treat!
+permalink: /challenge1/
 ---
 
 # Chip-Or-Treat!
