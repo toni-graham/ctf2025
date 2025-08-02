@@ -12,7 +12,7 @@ You are sitting in the commons and overhear some students talking about our poli
 
 You love dogs but somehow missed seeing Chip during halloween, What was chip for Halloween?
 
-#__________________________________________________________
+# __________________________________________________________
 
 Type your answer below and submit to see if you're correct:
 
