@@ -1,17 +1,20 @@
 <nav class="navbar">
   <div class="hamburger" id="hamburger">&#9776;</div>
-  <div class="side-menu" id="side-menu">
-    <a href="javascript:void(0)" class="closebtn" id="closebtn">&times;</a>
+  <div class="side-menu" id="side-menu" role="navigation" aria-label="Main Menu">
+    <a href="javascript:void(0)" class="closebtn" id="closebtn" aria-label="Close Menu">&times;</a>
     <a href="/ctf2025/">Home</a>
     <a href="/ctf2025/about/">About</a>
     <a href="/ctf2025/challenge/">Challenge</a>
   </div>
+  <div id="overlay"></div>
 </nav>
 
 <style>
   .navbar {
     background-color: #333;
     padding: 10px 20px;
+    position: relative;
+    z-index: 1100;
   }
 
   .hamburger {
@@ -25,6 +28,7 @@
     transform: scale(1.1);
   }
 
+  /* Side menu */
   .side-menu {
     height: 100%;
     width: 0;
@@ -37,7 +41,7 @@
     padding-top: 60px;
     display: flex;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 1200;
     opacity: 0;
   }
 
@@ -75,18 +79,44 @@
     color: white;
     text-decoration: none;
   }
+
+  /* Overlay */
+  #overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1150;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  #overlay.show {
+    display: block;
+    opacity: 1;
+  }
 </style>
 
 <script>
   const hamburger = document.getElementById('hamburger');
   const sideMenu = document.getElementById('side-menu');
   const closeBtn = document.getElementById('closebtn');
+  const overlay = document.getElementById('overlay');
 
-  hamburger.addEventListener('click', () => {
+  function openMenu() {
     sideMenu.classList.add('open');
-  });
+    overlay.classList.add('show');
+  }
 
-  closeBtn.addEventListener('click', () => {
+  function closeMenu() {
     sideMenu.classList.remove('open');
-  });
+    overlay.classList.remove('show');
+  }
+
+  hamburger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
 </script>
