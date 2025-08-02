@@ -23,24 +23,41 @@ Type your answer below and submit to see if you're correct:
 </div>
 
 <script>
+  // Load score if on challenge page
+  let score = localStorage.getItem("ctfScore") || 0;
+
   function checkAnswer() {
-    const correctAnswer = "CTF{dinosaur}";
+    const correctAnswer = "CTF{winner}";
+    const answerBox = document.querySelector(".answer-box");
     const userAnswer = document.getElementById("answerInput").value.trim();
     const feedback = document.getElementById("feedback");
+    const scoreDisplay = document.getElementById("scoreDisplay");
 
     if (userAnswer === correctAnswer) {
       feedback.textContent = "✅ Correct! You solved it!";
       feedback.style.color = "#00ffcc";
       feedback.style.textShadow = "0 0 10px #00ffcc, 0 0 20px #00ffcc";
-      answerBox.classList.remove("shake");
+
+      // Success animation
+      answerBox.classList.remove("success");
+      void answerBox.offsetWidth;
+      answerBox.classList.add("success");
+
+      // Update score once
+      if (!answerBox.classList.contains("solved")) {
+        score++;
+        localStorage.setItem("ctfScore", score);
+        answerBox.classList.add("solved");
+        if (scoreDisplay) scoreDisplay.textContent = score;
+      }
     } else {
       feedback.textContent = "❌ Incorrect, try again.";
       feedback.style.color = "#ff0066";
       feedback.style.textShadow = "0 0 10px #ff0066, 0 0 20px #ff0066";
 
-      // Trigger shake animation
+      // Shake animation
       answerBox.classList.remove("shake");
-      void answerBox.offsetWidth; // restart animation
+      void answerBox.offsetWidth;
       answerBox.classList.add("shake");
     }
   }
