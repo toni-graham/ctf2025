@@ -27,7 +27,7 @@ Type your answer below and submit to see if you're correct:
   let score = localStorage.getItem("ctfScore") || 0;
 
   function checkAnswer() {
-    const correctAnswer = "CTF{winner}";
+    const correctAnswer = "CTF{dinosaur}";
     const answerBox = document.querySelector(".answer-box");
     const userAnswer = document.getElementById("answerInput").value.trim();
     const feedback = document.getElementById("feedback");
@@ -45,7 +45,7 @@ Type your answer below and submit to see if you're correct:
 
       // Update score once
       if (!answerBox.classList.contains("solved")) {
-        score++;
+        score = score + 100;
         localStorage.setItem("ctfScore", score);
         answerBox.classList.add("solved");
         if (scoreDisplay) scoreDisplay.textContent = score;
