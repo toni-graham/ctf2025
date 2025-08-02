@@ -148,3 +148,16 @@ body::before {
   border-color: #ff0066;
   box-shadow: 0 0 15px #ff0066, 0 0 30px #ff0066;
 }
+
+/* Success pulse animation */
+@keyframes successPulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px #00ffcc; }
+  50% { transform: scale(1.05); box-shadow: 0 0 25px #00ffcc, 0 0 50px #00ffcc; }
+  100% { transform: scale(1); box-shadow: 0 0 10px #00ffcc; }
+}
+
+.success {
+  animation: successPulse 0.5s ease;
+  border-color: #00ffcc;
+  box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+}
