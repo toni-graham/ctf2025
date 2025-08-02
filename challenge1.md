@@ -1,7 +1,7 @@
 ---
 layout: default
-title: about
-permalink: /about/
+title: Challenge 1
+permalink: /challenge1/
 ---
 
 # About CTF 2025
