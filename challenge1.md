@@ -45,7 +45,7 @@ Type your answer below and submit to see if you're correct:
 
       // Update score once
       if (!answerBox.classList.contains("solved")) {
-        score = score + 100;
+        score = parseInt(score) + 100;
         localStorage.setItem("ctfScore", score);
         answerBox.classList.add("solved");
         if (scoreDisplay) scoreDisplay.textContent = score;
