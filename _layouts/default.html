@@ -4,21 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title }} - {{ site.title }}</title>
-  <style>
-    /* Basic reset and font */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-  </style>
 </head>
 <body>
+  {% include nav.html %}
+
+  <main style="padding: 20px; max-width: 800px; margin: auto;">
+    {{ content }}
+  </main>
+</body>
+</html>
+
   {% include nav.html %}
 
   <main>
