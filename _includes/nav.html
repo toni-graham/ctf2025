@@ -9,11 +9,6 @@
 </nav>
 
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-
   .navbar {
     background-color: #333;
     padding: 10px 20px;
@@ -25,7 +20,6 @@
     cursor: pointer;
   }
 
-  /* Side menu */
   .side-menu {
     height: 100%;
     width: 0;
@@ -47,7 +41,6 @@
     font-size: 18px;
     color: white;
     display: block;
-    transition: 0.3s;
   }
 
   .side-menu a:hover {
@@ -59,7 +52,21 @@
     top: 15px;
     right: 20px;
     font-size: 36px;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
   }
 </style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sideMenu = document.getElementById('side-menu');
+  const closeBtn = document.getElementById('closebtn');
+
+  hamburger.addEventListener('click', () => {
+    sideMenu.style.width = "250px";
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sideMenu.style.width = "0";
+  });
+</script>
