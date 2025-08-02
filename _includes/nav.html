@@ -38,6 +38,7 @@
     padding-top: 60px;
     display: flex;
     flex-direction: column;
+    z-index: 1000;
   }
 
   .side-menu a {
@@ -60,27 +61,6 @@
     font-size: 36px;
     text-decoration: none;
     color: white;
-  }
-
-  /* Desktop: show normal horizontal menu if desired */
-  @media (min-width: 600px) {
-    .hamburger {
-      display: none;
-    }
-    .side-menu {
-      width: 200px;
-      position: static;
-      height: auto;
-      flex-direction: row;
-      background-color: transparent;
-      padding-top: 0;
-    }
-    .side-menu a {
-      color: black;
-    }
-    .closebtn {
-      display: none;
-    }
   }
 </style>
 
