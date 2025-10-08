@@ -7,7 +7,7 @@ permalink: /challenge7/
 # Crack the Safe?
 
 Can you open this safe? I forgot the key to my safe but this program is supposed to help me with retrieving the lost key. Can you help me unlock my safe?
-You can download the secret file [SafeOpener](assets/SafeOpener (4).java){:download="SafeOpener (4).java"}.
+You can download the secret file [SafeOpener](ctf2025/SafeOpener.java){:download="SafeOpener.java"}.
 
 
 # __________________________________________________________
