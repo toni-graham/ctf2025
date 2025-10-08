@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Crack the Safe?
-permalink: /challenge5/
+permalink: /challenge7/
 ---
 
 # Crack the Safe?
