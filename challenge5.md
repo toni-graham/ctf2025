@@ -7,6 +7,7 @@ permalink: /challenge5/
 # Take a Guess?
 
 Below is a link to Alex Johnsons profile, a cybersecurity analyst with a strong interest in cryptography. Take a look at the details in his profile, as the clues you need to guess his password are hidden there. The password itself has a personal connection to Alex, so pay attention to the little details. Once you think you’ve figured it out, enter your guess in the box below and retrieve the flag. Good luck, and take your time to find the right answer!
+
 [Alex Johnson's Profile](https://toni-graham.github.io/)
   
 # __________________________________________________________
