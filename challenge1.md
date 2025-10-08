@@ -16,6 +16,14 @@ You love dogs but somehow missed seeing Chip during halloween, What was chip for
 
 Type your answer below and submit to see if you're correct:
 
+<div class="answer-box">
+  <form id="answer-form">
+    <input type="text" id="user-answer" placeholder="Enter your flag..." required>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="feedback"></div>
+</div>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("answer-form");
