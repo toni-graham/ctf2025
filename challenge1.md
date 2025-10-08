@@ -54,9 +54,3 @@ Type your answer below and submit to see if you're correct:
     });
   });
 </script>
-
-      void answerBox.offsetWidth;
-      answerBox.classList.add("shake");
-    }
-  }
-</script>
