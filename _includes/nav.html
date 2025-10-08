@@ -19,7 +19,7 @@
     z-index: 1100;
     box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
     display: flex;
-    justify-content: space-between; /* <-- pushes score to right */
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -41,6 +41,18 @@
     font-family: 'Orbitron', sans-serif;
     font-size: 18px;
     text-shadow: 0 0 8px #00fff7;
+    position: relative;
+  }
+
+  /* ✨ Score glow animation */
+  @keyframes scoreFlash {
+    0% { text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7; }
+    50% { text-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7, 0 0 60px #00fff7; }
+    100% { text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7; }
+  }
+
+  .score.animate {
+    animation: scoreFlash 1.2s ease-out;
   }
 
   /* Side menu */
@@ -104,7 +116,6 @@
     transform: rotate(90deg);
   }
 
-  /* Overlay */
   #overlay {
     position: fixed;
     display: none;
@@ -126,31 +137,52 @@
 </style>
 
 <script>
-  // Global score loader
   document.addEventListener("DOMContentLoaded", () => {
     const scoreDisplay = document.getElementById("scoreDisplay");
-    const score = localStorage.getItem("ctfScore") || 0;
-    if (scoreDisplay) {
-      scoreDisplay.textContent = score;
+    const scoreWrapper = document.querySelector(".score");
+    let score = parseInt(localStorage.getItem("ctfScore")) || 0;
+    scoreDisplay.textContent = score;
+
+    /**
+     * Adds points to the user's total score if they haven't solved the challenge before.
+     * @param {string} challengeId - Unique ID for the current challenge (e.g., "challenge1")
+     * @param {number} points - Points to award (default 100)
+     */
+    window.completeChallenge = function(challengeId, points = 100) {
+      const completedChallenges = JSON.parse(localStorage.getItem("completedChallenges")) || [];
+
+      // Only award points if challenge not already completed
+      if (!completedChallenges.includes(challengeId)) {
+        score += points;
+        localStorage.setItem("ctfScore", score);
+        completedChallenges.push(challengeId);
+        localStorage.setItem("completedChallenges", JSON.stringify(completedChallenges));
+        scoreDisplay.textContent = score;
+
+        // Add a glow animation to make it feel rewarding
+        scoreWrapper.classList.add("animate");
+        setTimeout(() => scoreWrapper.classList.remove("animate"), 1200);
+      }
+    };
+
+    // Hamburger menu logic
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('side-menu');
+    const closeBtn = document.getElementById('closebtn');
+    const overlay = document.getElementById('overlay');
+
+    function openMenu() {
+      sideMenu.classList.add('open');
+      overlay.classList.add('show');
     }
+
+    function closeMenu() {
+      sideMenu.classList.remove('open');
+      overlay.classList.remove('show');
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
   });
-
-  const hamburger = document.getElementById('hamburger');
-  const sideMenu = document.getElementById('side-menu');
-  const closeBtn = document.getElementById('closebtn');
-  const overlay = document.getElementById('overlay');
-
-  function openMenu() {
-    sideMenu.classList.add('open');
-    overlay.classList.add('show');
-  }
-
-  function closeMenu() {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('show');
-  }
-
-  hamburger.addEventListener('click', openMenu);
-  closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
 </script>
