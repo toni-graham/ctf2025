@@ -17,46 +17,44 @@ You love dogs but somehow missed seeing Chip during halloween, What was chip for
 Type your answer below and submit to see if you're correct:
 
 <div class="answer-box">
-  <input type="text" id="answerInput" placeholder="Enter your flag..." />
-  <button onclick="checkAnswer()">Submit</button>
-  <p id="feedback"></p>
+  <form id="answer-form">
+    <input type="text" id="user-answer" placeholder="Enter your flag..." required>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="feedback"></div>
 </div>
 
 <script>
-  // Load score if on challenge page
-  let score = localStorage.getItem("ctfScore") || 0;
-
-  function checkAnswer() {
-    const correctAnswer = "CTF{dinosaur}";
-    const answerBox = document.querySelector(".answer-box");
-    const userAnswer = document.getElementById("answerInput").value.trim();
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("answer-form");
     const feedback = document.getElementById("feedback");
     const scoreDisplay = document.getElementById("scoreDisplay");
 
-    if (userAnswer === correctAnswer) {
-      feedback.textContent = "✅ Correct! You solved it!";
-      feedback.style.color = "#00ffcc";
-      feedback.style.textShadow = "0 0 10px #00ffcc, 0 0 20px #00ffcc";
+    let score = parseInt(localStorage.getItem("ctfScore")) || 0;
 
-      // Success animation
-      answerBox.classList.remove("success");
-      void answerBox.offsetWidth;
-      answerBox.classList.add("success");
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
 
-      // Update score once
-      if (!answerBox.classList.contains("solved")) {
-        score = parseInt(score) + 100;
+      // 👇 Change this for each challenge
+      const correctAnswer = "flag{cyberpower}";
+
+      if (userAnswer === correctAnswer) {
+        feedback.textContent = "✅ Correct!";
+        feedback.style.color = "#00ff99";
+
+        // Add +100 points
+        score += 100;
         localStorage.setItem("ctfScore", score);
-        answerBox.classList.add("solved");
-        if (scoreDisplay) scoreDisplay.textContent = score;
+        scoreDisplay.textContent = score;
+      } else {
+        feedback.textContent = "❌ Wrong answer, try again!";
+        feedback.style.color = "#ff0066";
       }
-    } else {
-      feedback.textContent = "❌ Incorrect, try again.";
-      feedback.style.color = "#ff0066";
-      feedback.style.textShadow = "0 0 10px #ff0066, 0 0 20px #ff0066";
+    });
+  });
+</script>
 
-      // Shake animation
-      answerBox.classList.remove("shake");
       void answerBox.offsetWidth;
       answerBox.classList.add("shake");
     }
