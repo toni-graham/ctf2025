@@ -8,7 +8,7 @@ permalink: /challenge4/
 
 An urgent email from the CEO claims $75,000 is needed for a top-secret project. Can you spot the red flags and avoid getting phished?
 
-[Congratulations!!! Open Now!](https://toni-graham.github.io/whaling-ctf-challenge/)
+[Congratulations!!! Click Here!](https://toni-graham.github.io/whaling-ctf-challenge/)
 
 # __________________________________________________________
 Type your answer below and submit to see if you're correct:
