@@ -1,3 +1,9 @@
+---
+layout: default
+title: Inject Me!
+permalink: /challenge9/
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
