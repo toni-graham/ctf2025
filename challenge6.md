@@ -33,7 +33,7 @@ Type your answer below and submit to see if you're correct:
 
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-      const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
+      const userAnswer = document.getElementById("user-answer").value.trim();
 
       const correctAnswer = "FLAG{D0NT_US3_V1G3N3R3_C1PH3R_2951a89h}";
 
