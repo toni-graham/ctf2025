@@ -35,29 +35,42 @@ but the challenge definitely isn't.
 
 ## 🏁 Submit Your Flag
 
-Enter the flag you found:
-
-<form action="" onsubmit="return checkFlag(event)">
-  <input type="text" id="flag" placeholder="Enter your flag here" style="padding:10px;width:300px;">
-  <button style="padding:10px;">Submit</button>
-</form>
-
-<p id="result"></p>
+<div class="answer-box">
+  <form id="answer-form">
+    <input type="text" id="user-answer" placeholder="Enter your flag..." required>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="feedback"></div>
+</div>
 
 <script>
-  const correctFlag = "FLAG{Inj3ct10n_Succ3ss}";
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("answer-form");
+    const feedback = document.getElementById("feedback");
+    const scoreDisplay = document.getElementById("scoreDisplay");
 
-  function checkFlag(e) {
-    e.preventDefault();
-    const val = document.getElementById("flag").value.trim();
-    if (val === correctFlag) {
-      document.getElementById("result").innerText = "✅ Correct! Challenge completed.";
-      score = parseInt(score) + 100;
-      localStorage.setItem("ctfScore", score);
-      scoreDisplay.textContent = score;
-    } else {
-      document.getElementById("result").innerText = "❌ Incorrect flag. Try again.";
-    }
-  }
+    // Make sure the score is a number
+    let score = parseInt(localStorage.getItem("ctfScore")) || 0;
+    scoreDisplay.textContent = score;
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
+
+      const correctAnswer = "FLAG{Inj3ct10n_Succ3ss}";
+
+      if (userAnswer === correctAnswer) {
+        feedback.textContent = "✅ Correct!";
+        feedback.style.color = "#00ff99";
+
+        // Add 100 points properly
+        score = parseInt(score) + 100;
+        localStorage.setItem("ctfScore", score);
+        scoreDisplay.textContent = score;
+      } else {
+        feedback.textContent = "❌ Wrong answer, try again!";
+        feedback.style.color = "#ff0066";
+      }
+    });
+  });
 </script>
-
