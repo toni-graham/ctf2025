@@ -11,7 +11,7 @@ You just got out of your 11:30am class and your 1pm class was just canceled. Wit
 What are the birds trying to tell you?
 
 
-![Click here to find out what the birds are trying to tell you!](Screenshot%202025-11-22%20162146.png)
+![What are the birds trying to tell you?](chirp.png)
 
 (capitalize and separate you words with underscores when submitting your flag)
 
