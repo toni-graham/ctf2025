@@ -37,7 +37,7 @@ Type your answer below and submit to see if you're correct:
       e.preventDefault();
       const userAnswer = document.getElementById("user-answer").value.trim();
 
-      const correctAnswer = "FLAG{06/14/2019}";
+      const correctAnswer = "FLAG{06/23/2019}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
