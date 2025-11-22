@@ -15,40 +15,5 @@
     {{ content }}
   </main>
 
-  <!-- Reset button for testing -->
-  <button id="resetScore" class="reset-btn">Reset Score</button>
-
-  <script>
-    document.getElementById("resetScore").addEventListener("click", () => {
-      localStorage.removeItem("ctfScore");
-      localStorage.removeItem("completedChallenges");
-      const scoreDisplay = document.getElementById("scoreDisplay");
-      if (scoreDisplay) scoreDisplay.textContent = 0;
-      alert("Score and completed challenges have been reset!");
-    });
-  </script>
-
-  <style>
-    .reset-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #ff004c;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-family: 'Orbitron', sans-serif;
-      box-shadow: 0 0 10px #ff004c, 0 0 20px #ff004c;
-      transition: box-shadow 0.3s ease, transform 0.2s ease;
-      z-index: 1500;
-    }
-
-    .reset-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #ff004c, 0 0 30px #ff004c;
-    }
-  </style>
 </body>
 </html>
