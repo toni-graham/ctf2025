@@ -75,16 +75,17 @@
     left: 0;
     background: rgba(0, 10, 30, 0.95);
     border-right: 2px solid #00fff7;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transition: width 0.4s ease;
+    overflow-y: auto;    /* vertical scroll inside the menu */
+    overflow-x: hidden;  /* hide horizontal scroll */
+    max-height: 100vh;   /* ensures menu stays within viewport */
+    transition: width 0.4s ease, opacity 0.3s ease;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
     z-index: 1200;
     opacity: 0;
     box-shadow: 0 0 15px #00fff7;
-  }
+}
 
   .side-menu.open {
     width: 270px;
