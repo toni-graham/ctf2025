@@ -34,7 +34,7 @@ Type your answer below and submit to see if you're correct:
 
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-      const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
+      const userAnswer = document.getElementById("user-answer").value.trim();
 
       const correctAnswer = "FLAG{True Grit says that UMBC is the greatest university ever!}";
 
