@@ -39,7 +39,7 @@ What are the birds trying to tell you?
     form.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const userAnswer = document.getElementById("user-answer").value.trim().toUpper();
+      const userAnswer = document.getElementById("user-answer").value.trim();
       const correctAnswer = "FLAG{DONT_FORGET_THE_EXAM}";
 
       if (userAnswer === correctAnswer) {
