@@ -36,7 +36,7 @@ Type your answer below and submit to see if you're correct:
       e.preventDefault();
       const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
 
-      const correctAnswer = "flag{cyberpower}";
+      const correctAnswer = "FLAG{True Grit says that UMBC is the greatest university ever!}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
