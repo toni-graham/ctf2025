@@ -8,9 +8,9 @@ permalink: /challenge1/
 
 You are sitting in the commons and overhear some students talking about our police dog Chip. 
 “Did you see Chip's Halloween costume?”
-“Yeah! She was so cute! ..”
+“Yeah! She was so cute! But  her outfit from 2023 was cuter...”
 
-You love dogs but somehow missed seeing Chip during halloween, What was chip for Halloween?
+You love dogs but somehow missed seeing Chip during halloween 2023, What was chip for Halloween 2023?
 
 # __________________________________________________________
 
@@ -38,7 +38,7 @@ Type your answer below and submit to see if you're correct:
       e.preventDefault();
       const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
 
-      const correctAnswer = "flag{cyberpower}";
+      const correctAnswer = "FLAG{shark}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
