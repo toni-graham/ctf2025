@@ -35,7 +35,7 @@ Type your answer below and submit to see if you're correct:
       e.preventDefault();
       const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
 
-      const correctAnswer = "FLAG{Don't_Click_on_Random_Links}";
+      const correctAnswer = "FLAG{Whaling_Alert_2025}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
