@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Inject Me!
-permalink: /challenge9/
+permalink: /challenge10/
 ---
 
 # Inject Me!
