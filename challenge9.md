@@ -30,7 +30,7 @@ Type your answer below and submit to see if you're correct:
 
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-      const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
+      const userAnswer = document.getElementById("user-answer").value.trim();
 
       const correctAnswer = "FLAG{w4rm1ng_Up_w1tH_jAv4_3808d338b46}";
 
