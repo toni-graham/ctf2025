@@ -51,17 +51,13 @@ Enter the flag you found:
     e.preventDefault();
     const val = document.getElementById("flag").value.trim();
     if (val === correctFlag) {
-      document.getElementById("result").innerText = "Correct! Challenge completed.";
+      document.getElementById("result").innerText = "✅ Correct! Challenge completed.";
+      score = parseInt(score) + 100;
+      localStorage.setItem("ctfScore", score);
+      scoreDisplay.textContent = score;
     } else {
-      document.getElementById("result").innerText = "Incorrect flag. Try again.";
+      document.getElementById("result").innerText = "❌ Incorrect flag. Try again.";
     }
   }
 </script>
 
----
-
-## 📌 Instructions for Players
-
-1. Click the link above to open the vulnerable login page.  
-2. Perform an SQL Injection attack to bypass authentication.  
-   
