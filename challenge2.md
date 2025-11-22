@@ -10,6 +10,8 @@ As the students continue their conversation (and you continue eavesdropping) you
 
 What is Chip’s birthday?
 
+(formatted mm/dd/yyyy)
+
 # __________________________________________________________
 Type your answer below and submit to see if you're correct:
 
@@ -35,7 +37,7 @@ Type your answer below and submit to see if you're correct:
       e.preventDefault();
       const userAnswer = document.getElementById("user-answer").value.trim().toLowerCase();
 
-      const correctAnswer = "flag{cyberpower}";
+      const correctAnswer = "FLAG{06/14/2019}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
