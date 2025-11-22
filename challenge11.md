@@ -17,7 +17,7 @@ What are the birds trying to tell you?
 
 ---
 
-## 🏁 Submit Your Flag
+Type your answer below and submit to see if you're correct:
 
 <div class="answer-box">
   <form id="answer-form">
@@ -33,19 +33,22 @@ What are the birds trying to tell you?
     const feedback = document.getElementById("feedback");
     const scoreDisplay = document.getElementById("scoreDisplay");
 
+    // Make sure the score is a number
     let score = parseInt(localStorage.getItem("ctfScore")) || 0;
     scoreDisplay.textContent = score;
 
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-
       const userAnswer = document.getElementById("user-answer").value.trim();
+
       const correctAnswer = "FLAG{DONT_FORGET_THE_EXAM}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
         feedback.style.color = "#00ff99";
-        score += 100;
+
+        // Add 100 points properly
+        score = parseInt(score) + 100;
         localStorage.setItem("ctfScore", score);
         scoreDisplay.textContent = score;
       } else {
@@ -55,3 +58,4 @@ What are the birds trying to tell you?
     });
   });
 </script>
+
