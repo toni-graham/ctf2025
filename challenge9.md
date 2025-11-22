@@ -6,7 +6,7 @@ permalink: /challenge9/
 
 # Save Chip!
 
-Dr.Evil has taken chip hostage! Your mission is to enter Dr. Evil's laboratory and free Chip from Dr. Evil's vices. The laboratory is protected by a series of locked vault doors. Each door is controlled by a computer and requires a password to open. Unfortunately, our undercover agents have not been able to obtain the secret passwords for the vault doors, but one of our junior agents obtained the source code for each vault's computer! You will need to read the source code for each level to figure out what the password is for that vault door. As a warmup, we have created a replica vault in our training facility. The source code for the training vault is here: 
+Dr.Evil has taken chip hostage! Your mission is to enter Dr. Evil's laboratory and free Chip from Dr. Evil's vices. The laboratory is protected by a series of locked vault doors. Each door is controlled by a computer and requires a password to open. Unfortunately, our undercover agents have not been able to obtain the secret passwords for the vault doors, but one of our junior agents obtained the source code for each vault's computer! You will need to read the source code for each level to figure out what the password is for that vault door. As a warmup, we have created a replica vault in our training facility. The source code for the training vault is here: [VaultDoor](VaultDoor1.java){:download="VaultDoor1.java"}
 # __________________________________________________________
 Type your answer below and submit to see if you're correct:
 
