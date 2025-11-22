@@ -1,24 +1,19 @@
 ---
 layout: default
-title: The Curious Whois Tool
+title: Chirp Chirp!
 permalink: /challenge11/
 ---
 
-# The Curious Whois Tool
+# Chirp Chirp
 
-The True Grit IT Department created a “simple” domain lookup tool to help students check whether their project domains are available.
+You just got out of your 11:30am class and your 1pm class was just canceled. With no class until 4pm you decide to eat lunch by the library pond. A charm of sparrows land on the railing, you think they are trying to tell you something.
 
-The developer, however, made one small mistake…
+What are the birds trying to tell you?
 
-They take user input and directly place it into a system command.
 
-### Your Mission  
-Use OS Command Injection to make the server run **your** command, locate the hidden flag on the system, and submit it below.
+![Click here to find out what the birds are trying to tell you!](Screenshot 2025-11-22 162146.png)
 
----
-
-## 🔗 Vulnerable Whois Tool  
-👉 **[Open the Whois Lookup](./osinj-app/)**
+(capitalize and separate you words with underscores when submitting your flag)
 
 ---
 
@@ -44,8 +39,8 @@ Use OS Command Injection to make the server run **your** command, locate the hid
     form.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      const userAnswer = document.getElementById("user-answer").value.trim();
-      const correctAnswer = "FLAG{0S_1NJ3CT10N_C0MP13T3}";
+      const userAnswer = document.getElementById("user-answer").value.trim().toUpper();
+      const correctAnswer = "FLAG{DONT_FORGET_THE_EXAM}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
