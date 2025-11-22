@@ -6,14 +6,30 @@ permalink: /challenge9/
 
 # Inject Me!
 
-Your task is to visit the external SQL Injection challenge, exploit the vulnerability, retrieve the flag, and return here to submit it.
+The True Grit Bank prides itself on having spirit, determination, and… well, not much in the way of web security.
 
+The bank's login page has been acting suspiciously lately. Customers claim they can “log in” without knowing any real credentials. The developers insist everything is perfectly safe, which—let's be honest—is usually the first sign that something is very wrong.
+
+That's where you come in.
+
+You've been hired as a digital troubleshooter:
+Part detective, part hacker, part “I can't believe they deployed this to production.”
+
+Your mission:
+
+Visit the bank's external login page, poke at its weak spots, exploit the vulnerability lurking in plain sight, recover the hidden flag, and return here to submit your findings.
+
+Stay sharp.
+Stay clever.
+Stay gritty.
+
+Because at the True Grit Bank, the security may be flimsy…
+but the challenge definitely isn't.
 ---
 
-## 🔗 Challenge URL
+## 🔗
 
-👉 **[Start the SQL Injection Challenge](https://yourusername.github.io/sqli-challenge)**  
-*(Replace this link with your actual GitHub Pages URL.)*
+👉 **[True Grit Bank Account Login](https://toni-graham.github.io/sqli-challenge/)**  
 
 ---
 
