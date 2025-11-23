@@ -32,7 +32,7 @@ Type your answer below and submit to see if you're correct:
       e.preventDefault();
       const userAnswer = document.getElementById("user-answer").value.trim();
 
-      const correctAnswer = "FLAG{d35cr4mbl3_tH3_cH4r4cT3r5_75092e}";
+      const correctAnswer = "FLAG{d9r5rc43b_43tclHc_m5r34TH52_307e}";
 
       if (userAnswer === correctAnswer) {
         feedback.textContent = "✅ Correct!";
